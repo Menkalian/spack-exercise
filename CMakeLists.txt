@@ -38,11 +38,11 @@ add_executable(spackexample main.cpp)
 target_link_libraries(spackexample spackexamplelib)
 if (WITH_YAML)
   target_link_libraries(spackexamplelib yaml-cpp)
-  target_compile_definitions(spackexamplelib WITH_YAML)
+  target_compile_definitions(spackexamplelib PRIVATE WITH_YAML)
 endif()
 if (WITH_BOOST)
   target_link_libraries(spackexamplelib Boost::filesystem)
-  target_compile_definitions(spackexamplelib WITH_BOOST)
+  target_compile_definitions(spackexamplelib PRIVATE WITH_BOOST)
 endif()
 
 target_include_directories(spackexamplelib
