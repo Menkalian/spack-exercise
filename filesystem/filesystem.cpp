@@ -49,7 +49,7 @@ void inspectDirectory()
 
 #else
 
-void modifyAndPrintSets() {
+void inspectDirectory() {
   std::cout << "Filesystem operations are not available without Boost. Build package with '+boost' to enable functionality" << std::endl;
 }
 
