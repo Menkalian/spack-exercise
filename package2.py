@@ -22,18 +22,8 @@ class SpackExercise(CMakePackage):
     version("0.2.0", sha256="3dd6b4cc0f7aff179d8e290bc3879056237ae372738a4bd7222f6450fbcdfc77")
     version("0.1.0", sha256="cac78e641cb703e3fe51956f91fe8347ac52f74ef037d8eadae5777c65a19a00")
 
-    variant("boost", default=True, description="Build with optional features and boost dependency")
-    variant("yaml", default=True, description="Build with integrated yaml-parser")
-
     depends_on("cxx", type="build")
 
-    depends_on("boost", when="@0.2.0: +boost")
-    depends_on("yaml-cpp", when="@0.3.0: +yaml")
-
-class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
-    def cmake_args(self):
-        return [
-            self.define_from_variant("WITH_BOOST", "boost"),
-            self.define_from_variant("WITH_YAML", "yaml")
-        ]
+    depends_on("boost", when="@0.2.0:")
+    depends_on("yaml-cpp", when="@0.3.0:")
 
