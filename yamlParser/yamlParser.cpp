@@ -14,7 +14,7 @@ void parseConfig(const std::string yamlFile){
 #else
 
 void modifyAndPrintSets() {
-  std::cout << "Yaml-Parser was disabled at build time. Build package with '+yaml' to enable functionalit>
+  std::cout << "Yaml-Parser was disabled at build time. Build package with '+yaml' to enable functionality" << std::endl;
 }
 
 #endif
