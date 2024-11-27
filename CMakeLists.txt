@@ -42,7 +42,7 @@ if (WITH_YAML)
 endif()
 if (WITH_BOOST)
   target_link_libraries(spackexamplelib Boost::filesystem)
-  target_compile_definitons(spackexamplelib WITH_BOOST)
+  target_compile_definitions(spackexamplelib WITH_BOOST)
 endif()
 
 target_include_directories(spackexamplelib
